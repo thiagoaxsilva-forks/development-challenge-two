@@ -6,7 +6,7 @@ import patientsReducer from "./patients/patients.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [],
+  whitelist: ["patients"],
 };
 
 const rootReducer = combineReducers({

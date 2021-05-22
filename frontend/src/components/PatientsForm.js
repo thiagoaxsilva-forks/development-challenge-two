@@ -43,13 +43,16 @@ const PatientsForm = (props) => {
 
     if ("phone" in fieldValues)
       temp.phone =
-        fieldValues.phone.length > 9 ? "" : "Minimum 10 numbers required.";
+        fieldValues.phone.length > 9
+          ? ""
+          : "O número de telefone deve ter 10 dígitos contando com o DDD.";
 
     setErrors({
       ...temp,
     });
 
-    if (fieldValues == values) return Object.values(temp).every((x) => x == "");
+    if (fieldValues === values)
+      return Object.values(temp).every((x) => x === "");
   };
 
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
